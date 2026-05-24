@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.alipay.riskops.common.service.facade.auto.daointerface.custom.TestMapperDAO">
+
+    <!-- Custom query: select only age and paymentId -->
+    <select id="selectAgeAndPaymentId" resultType="com.alipay.riskops.common.service.facade.auto.dataobject.test">
+        SELECT name, major
+        FROM test
+    </select>
+
+    <!-- Custom query: select with a condition -->
+    <select id="selectByStatus" parameterType="string" resultType="com.alipay.riskops.common.service.facade.auto.dataobject.test">
+        SELECT *
+        FROM test
+        WHERE major = #{major}
+    </select>
+
+</mapper>
