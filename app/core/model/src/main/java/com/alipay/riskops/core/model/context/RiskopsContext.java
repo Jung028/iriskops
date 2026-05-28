@@ -1,15 +1,15 @@
 package com.alipay.riskops.core.model.context;
 
-import com.alipay.riskops.core.model.enums.RiskopsActionEnum;
+import com.alipay.riskops.core.model.enums.RiskOpsActionEnum;
 
 import java.util.Date;
 
-public class RiskopsContext {
+public class RiskOpsContext {
 
     private static final long serialVersionUID = 1L;
 
     private Date time;
-    private RiskopsActionEnum action;
+    private RiskOpsActionEnum action;
     private String operatorId;
     private String operatorName;
 
@@ -22,11 +22,11 @@ public class RiskopsContext {
         this.time = time;
     }
 
-    public RiskopsActionEnum getAction() {
+    public RiskOpsActionEnum getAction() {
         return action;
     }
 
-    public void setAction(RiskopsActionEnum action) {
+    public void setAction(RiskOpsActionEnum action) {
         this.action = action;
     }
 
@@ -46,7 +46,7 @@ public class RiskopsContext {
         this.operatorName = operatorName;
     }
 
-    public RiskopsContext(RiskopsActionEnum action, Date time, String operatorId, String operatorName) {
+    public RiskOpsContext(RiskOpsActionEnum action, Date time, String operatorId, String operatorName) {
         this.action = action;
         this.time = time;
         this.operatorId = operatorId;

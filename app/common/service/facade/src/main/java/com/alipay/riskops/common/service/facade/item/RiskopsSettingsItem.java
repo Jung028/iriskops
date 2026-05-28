@@ -1,6 +1,6 @@
 package com.alipay.riskops.common.service.facade.item;
 
-public class RiskopsSettingsItem {
+public class RiskOpsSettingsItem {
 
     private BusinessProfileItem profile;
     private TaxSettingsItem tax;

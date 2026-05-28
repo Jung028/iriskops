@@ -16,8 +16,8 @@ public class QrCodeItem {
     public String getQrId() { return qrId; }
     public void setQrId(String qrId) { this.qrId = qrId; }
 
-    public String getRiskopsId() { return riskopsId; }
-    public void setRiskopsId(String riskopsId) { this.riskopsId = riskopsId; }
+    public String getRiskOpsId() { return riskopsId; }
+    public void setRiskOpsId(String riskopsId) { this.riskopsId = riskopsId; }
 
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }

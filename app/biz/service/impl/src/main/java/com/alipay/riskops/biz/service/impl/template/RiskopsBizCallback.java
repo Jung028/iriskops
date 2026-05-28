@@ -1,9 +1,9 @@
 package com.alipay.riskops.biz.service.impl.template;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseResult;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseResult;
 
-public abstract class RiskopsBizCallback<T extends RiskopsBaseRequest, R extends RiskopsBaseResult>{
+public abstract class RiskOpsBizCallback<T extends RiskOpsBaseRequest, R extends RiskOpsBaseResult>{
 
     /**
      * define the default response object

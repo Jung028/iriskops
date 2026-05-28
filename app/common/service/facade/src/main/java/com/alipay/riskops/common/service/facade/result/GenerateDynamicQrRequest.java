@@ -1,10 +1,10 @@
 package com.alipay.riskops.common.service.facade.result;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
 
 import java.math.BigDecimal;
 
-public class GenerateDynamicQrRequest extends RiskopsBaseRequest {
+public class GenerateDynamicQrRequest extends RiskOpsBaseRequest {
     private BigDecimal amount;
     private String currency;
     private String label;

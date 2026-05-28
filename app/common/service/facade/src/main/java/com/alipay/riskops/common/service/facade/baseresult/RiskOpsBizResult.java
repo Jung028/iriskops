@@ -1,6 +1,6 @@
 package com.alipay.riskops.common.service.facade.baseresult;
 
-public class RiskopsBizResult<T> extends RiskopsBaseResult {
+public class RiskOpsBizResult<T> extends RiskOpsBaseResult {
     private T result;
     private boolean success;
 

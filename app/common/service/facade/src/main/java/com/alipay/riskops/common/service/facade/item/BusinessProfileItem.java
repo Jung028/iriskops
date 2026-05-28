@@ -14,8 +14,8 @@ public class BusinessProfileItem {
     private String address;
     private String status;
 
-    public String getRiskopsId() { return riskopsId; }
-    public void setRiskopsId(String riskopsId) { this.riskopsId = riskopsId; }
+    public String getRiskOpsId() { return riskopsId; }
+    public void setRiskOpsId(String riskopsId) { this.riskopsId = riskopsId; }
     public String getBusinessName() { return businessName; }
     public void setBusinessName(String businessName) { this.businessName = businessName; }
     public String getAbn() { return abn; }

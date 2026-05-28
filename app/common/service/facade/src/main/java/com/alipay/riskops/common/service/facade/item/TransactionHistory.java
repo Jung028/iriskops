@@ -16,8 +16,8 @@ public class TransactionHistory {
     public String getTransactionId() { return transactionId; }
     public void setTransactionId(String transactionId) { this.transactionId = transactionId; }
 
-    public String getRiskopsId() { return riskopsId; }
-    public void setRiskopsId(String riskopsId) { this.riskopsId = riskopsId; }
+    public String getRiskOpsId() { return riskopsId; }
+    public void setRiskOpsId(String riskopsId) { this.riskopsId = riskopsId; }
 
     public BigDecimal getAmount() { return amount; }
     public void setAmount(BigDecimal amount) { this.amount = amount; }

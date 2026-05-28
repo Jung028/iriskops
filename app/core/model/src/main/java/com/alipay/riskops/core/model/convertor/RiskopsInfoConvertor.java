@@ -1,67 +1,67 @@
 package com.alipay.riskops.core.model.convertor;
 
-import com.alipay.riskops.common.dal.auto.dataobject.RiskopsInfoDO;
-import com.alipay.riskops.common.service.facade.item.RiskopsInfoItem;
-import com.alipay.riskops.core.model.domain.RiskopsInfo;
+import com.alipay.riskops.common.dal.auto.dataobject.RiskOpsInfoDO;
+import com.alipay.riskops.common.service.facade.item.RiskOpsInfoItem;
+import com.alipay.riskops.core.model.domain.RiskOpsInfo;
 
 /**
  * @author adam
  * @date 25/4/2026 6:31 PM
  */
-public class RiskopsInfoConvertor {
+public class RiskOpsInfoConvertor {
 
-    public static RiskopsInfoItem convertToItem(RiskopsInfo riskopsInfo) {
+    public static RiskOpsInfoItem convertToItem(RiskOpsInfo riskopsInfo) {
         if (riskopsInfo == null) {
             return null;
         }
-        RiskopsInfoItem riskopsInfoItem = new RiskopsInfoItem();
-        riskopsInfoItem.setRiskopsId(riskopsInfo.getRiskopsId());
-        riskopsInfoItem.setRiskopsName(riskopsInfo.getRiskopsName());
+        RiskOpsInfoItem riskopsInfoItem = new RiskOpsInfoItem();
+        riskopsInfoItem.setRiskOpsId(riskopsInfo.getRiskOpsId());
+        riskopsInfoItem.setRiskOpsName(riskopsInfo.getRiskOpsName());
         riskopsInfoItem.setCreatedAt(riskopsInfo.getCreatedAt());
         riskopsInfoItem.setUpdatedAt(riskopsInfo.getUpdatedAt());
-        riskopsInfoItem.setRiskopsCategory(riskopsInfo.getRiskopsCategory());
+        riskopsInfoItem.setRiskOpsCategory(riskopsInfo.getRiskOpsCategory());
         riskopsInfoItem.setStatus(riskopsInfo.getStatus());
         return riskopsInfoItem;
     }
 
-    public static RiskopsInfoItem convertToDomain(RiskopsInfo riskopsInfo) {
+    public static RiskOpsInfoItem convertToDomain(RiskOpsInfo riskopsInfo) {
         if (riskopsInfo == null) {
             return null;
         }
-        RiskopsInfoItem riskopsInfoItem = new RiskopsInfoItem();
-        riskopsInfoItem.setRiskopsId(riskopsInfo.getRiskopsId());
-        riskopsInfoItem.setRiskopsName(riskopsInfo.getRiskopsName());
+        RiskOpsInfoItem riskopsInfoItem = new RiskOpsInfoItem();
+        riskopsInfoItem.setRiskOpsId(riskopsInfo.getRiskOpsId());
+        riskopsInfoItem.setRiskOpsName(riskopsInfo.getRiskOpsName());
         riskopsInfoItem.setCreatedAt(riskopsInfo.getCreatedAt());
         riskopsInfoItem.setUpdatedAt(riskopsInfo.getUpdatedAt());
-        riskopsInfoItem.setRiskopsCategory(riskopsInfo.getRiskopsCategory());
+        riskopsInfoItem.setRiskOpsCategory(riskopsInfo.getRiskOpsCategory());
         riskopsInfoItem.setStatus(riskopsInfo.getStatus());
         return riskopsInfoItem;
     }
 
-    public static RiskopsInfoDO convertToDO(RiskopsInfo riskopsInfo) {
+    public static RiskOpsInfoDO convertToDO(RiskOpsInfo riskopsInfo) {
         if (riskopsInfo == null) {
             return null;
         }
-        RiskopsInfoDO riskopsInfoDO = new RiskopsInfoDO();
-        riskopsInfoDO.setRiskopsId(riskopsInfo.getRiskopsId());
-        riskopsInfoDO.setRiskopsName(riskopsInfo.getRiskopsName());
-        riskopsInfoDO.setRiskopsCategory(riskopsInfo.getRiskopsCategory());
+        RiskOpsInfoDO riskopsInfoDO = new RiskOpsInfoDO();
+        riskopsInfoDO.setRiskOpsId(riskopsInfo.getRiskOpsId());
+        riskopsInfoDO.setRiskOpsName(riskopsInfo.getRiskOpsName());
+        riskopsInfoDO.setRiskOpsCategory(riskopsInfo.getRiskOpsCategory());
         riskopsInfoDO.setStatus(riskopsInfo.getStatus());
         riskopsInfoDO.setCreatedAt(riskopsInfo.getCreatedAt());
         riskopsInfoDO.setUpdatedAt(riskopsInfo.getUpdatedAt());
         return riskopsInfoDO;
     }
 
-    public static RiskopsInfo convertToModel(RiskopsInfoDO riskopsInfoDO) {
+    public static RiskOpsInfo convertToModel(RiskOpsInfoDO riskopsInfoDO) {
         if (riskopsInfoDO == null) {
             return null;
         }
-        RiskopsInfo riskopsInfo = new RiskopsInfo();
-        riskopsInfo.setRiskopsId(riskopsInfoDO.getRiskopsId());
-        riskopsInfo.setRiskopsName(riskopsInfoDO.getRiskopsName());
+        RiskOpsInfo riskopsInfo = new RiskOpsInfo();
+        riskopsInfo.setRiskOpsId(riskopsInfoDO.getRiskOpsId());
+        riskopsInfo.setRiskOpsName(riskopsInfoDO.getRiskOpsName());
         riskopsInfo.setCreatedAt(riskopsInfoDO.getCreatedAt());
         riskopsInfo.setUpdatedAt(riskopsInfoDO.getUpdatedAt());
-        riskopsInfo.setRiskopsCategory(riskopsInfoDO.getRiskopsCategory());
+        riskopsInfo.setRiskOpsCategory(riskopsInfoDO.getRiskOpsCategory());
         riskopsInfo.setStatus(riskopsInfoDO.getStatus());
         return riskopsInfo;
     }

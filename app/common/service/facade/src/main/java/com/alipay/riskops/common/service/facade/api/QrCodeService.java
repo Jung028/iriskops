@@ -1,6 +1,6 @@
 package com.alipay.riskops.common.service.facade.api;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBizResult;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBizResult;
 import com.alipay.riskops.common.service.facade.item.GenerateQrResult;
 import com.alipay.riskops.common.service.facade.item.QrCodeItem;
 import com.alipay.riskops.common.service.facade.result.GenerateDynamicQrRequest;
@@ -16,11 +16,11 @@ import java.util.List;
  */
 public interface QrCodeService {
 
-    RiskopsBizResult<GenerateQrResult> generateStaticQr(GenerateStaticQrRequest request);
+    RiskOpsBizResult<GenerateQrResult> generateStaticQr(GenerateStaticQrRequest request);
 
-    RiskopsBizResult<GenerateQrResult> generateDynamicQr(GenerateDynamicQrRequest request);
+    RiskOpsBizResult<GenerateQrResult> generateDynamicQr(GenerateDynamicQrRequest request);
 
-    RiskopsBizResult<List<QrCodeItem>> queryRiskopsQrs(String riskopsId);
+    RiskOpsBizResult<List<QrCodeItem>> queryRiskOpsQrs(String riskopsId);
 
-    RiskopsBizResult<Boolean> disableQr(String qrId);
+    RiskOpsBizResult<Boolean> disableQr(String qrId);
 }

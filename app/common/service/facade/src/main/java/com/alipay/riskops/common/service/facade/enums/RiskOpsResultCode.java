@@ -3,7 +3,7 @@ package com.alipay.riskops.common.service.facade.enums;
 
 import static com.alipay.riskops.common.service.facade.enums.ErrorCodeConstants.PREFIX;
 
-public enum RiskopsResultCode {
+public enum RiskOpsResultCode {
 
 
     EXECUTE_SUCCESS(GlobalResultCodes.EXECUTE_SUCCESS, "Success"),
@@ -32,12 +32,12 @@ public enum RiskopsResultCode {
         return description;
     }
 
-    RiskopsResultCode(String code, String description) {
+    RiskOpsResultCode(String code, String description) {
         this.code = code;
         this.description = description;
     }
 
-    RiskopsResultCode(String level, String bizError, String bizType, String errorSpecific, String description) {
+    RiskOpsResultCode(String level, String bizError, String bizType, String errorSpecific, String description) {
         this.code = PREFIX + level + bizError + SystemCode.I_SLIPCORE + bizType + errorSpecific;
         this.description = description;
     }

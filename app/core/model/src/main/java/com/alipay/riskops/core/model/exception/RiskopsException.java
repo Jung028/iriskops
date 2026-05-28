@@ -1,28 +1,28 @@
 package com.alipay.riskops.core.model.exception;
 
 
-import com.alipay.riskops.common.service.facade.enums.RiskopsResultCode;
+import com.alipay.riskops.common.service.facade.enums.RiskOpsResultCode;
 
-public class RiskopsException extends RuntimeException {
+public class RiskOpsException extends RuntimeException {
 
   private static final long seralVersionUID = 9187623791824214L;
 
-  private RiskopsResultCode resultCode;
+  private RiskOpsResultCode resultCode;
 
-  public RiskopsException(RiskopsResultCode resultCode, String message) {
+  public RiskOpsException(RiskOpsResultCode resultCode, String message) {
     super(message);
     this.resultCode = resultCode;
   }
 
-  public RiskopsException(RiskopsResultCode resultCode) {
+  public RiskOpsException(RiskOpsResultCode resultCode) {
     this(resultCode, resultCode.getDescription());
   }
 
-  public RiskopsResultCode getResultCode() {
+  public RiskOpsResultCode getResultCode() {
     return resultCode;
   }
 
-  public void setResultCode(RiskopsResultCode resultCode) {
+  public void setResultCode(RiskOpsResultCode resultCode) {
     this.resultCode = resultCode;
   }
 }

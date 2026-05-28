@@ -1,7 +1,7 @@
 package com.alipay.riskops.biz.service.impl.helper;
 
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBizResult;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBizResult;
 
 /**
  * @author adam
@@ -18,7 +18,7 @@ public class ResponseBuilder {
      * @param code
      * @param <T>
      */
-    public static <T> void success(RiskopsBizResult<T> response, T data, String message, String code) {
+    public static <T> void success(RiskOpsBizResult<T> response, T data, String message, String code) {
         response.setSuccess(true);
         response.setResult(data);
         response.setResultMessage(message);
@@ -34,7 +34,7 @@ public class ResponseBuilder {
      * @param code
      * @param <T>
      */
-    public static <T> void fail(RiskopsBizResult<T> response, String message, String code) {
+    public static <T> void fail(RiskOpsBizResult<T> response, String message, String code) {
         response.setResult(null);
         response.setResultMessage(message);
         response.setResultCode(code);

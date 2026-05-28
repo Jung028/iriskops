@@ -1,9 +1,9 @@
 package com.alipay.riskops.web;
 
-import com.alipay.riskops.common.service.facade.api.RiskopsService;
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBizResult;
-import com.alipay.riskops.common.service.facade.item.RiskopsInfoItem;
-import com.alipay.riskops.common.service.facade.result.QueryRiskopsInfoRequest;
+import com.alipay.riskops.common.service.facade.api.RiskOpsService;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBizResult;
+import com.alipay.riskops.common.service.facade.item.RiskOpsInfoItem;
+import com.alipay.riskops.common.service.facade.result.QueryRiskOpsInfoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/riskops")
-public class RiskopsController {
+public class RiskOpsController {
     @Autowired
-    private RiskopsService riskopsService;
+    private RiskOpsService riskopsService;
 
-    @PostMapping("/queryRiskopsInfo")
-    public RiskopsBizResult<RiskopsInfoItem> queryRiskopsInfo(@RequestBody QueryRiskopsInfoRequest request) {
-        return riskopsService.queryRiskopsInfo(request);
+    @PostMapping("/queryRiskOpsInfo")
+    public RiskOpsBizResult<RiskOpsInfoItem> queryRiskOpsInfo(@RequestBody QueryRiskOpsInfoRequest request) {
+        return riskopsService.queryRiskOpsInfo(request);
     }
 }

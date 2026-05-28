@@ -1,8 +1,8 @@
 package com.alipay.riskops.common.service.facade.result;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
 
-public class RefundTransactionRequest extends RiskopsBaseRequest {
+public class RefundTransactionRequest extends RiskOpsBaseRequest {
     private String transactionId;
     private String reason;
 

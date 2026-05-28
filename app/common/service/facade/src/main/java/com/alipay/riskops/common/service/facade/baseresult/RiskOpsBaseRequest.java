@@ -1,6 +1,6 @@
 package com.alipay.riskops.common.service.facade.baseresult;
 
-public class RiskopsBaseRequest {
+public class RiskOpsBaseRequest {
     private String operatorId;
     private String operatorName;
 

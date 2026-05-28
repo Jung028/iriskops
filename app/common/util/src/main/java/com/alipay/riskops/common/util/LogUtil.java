@@ -1,9 +1,9 @@
 package com.alipay.riskops.common.util;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseResult;
-import com.alipay.riskops.common.service.facade.enums.RiskopsResultCode;
-import com.alipay.riskops.core.model.exception.RiskopsException;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseResult;
+import com.alipay.riskops.common.service.facade.enums.RiskOpsResultCode;
+import com.alipay.riskops.core.model.exception.RiskOpsException;
 import org.slf4j.Logger;
 
 public class LogUtil {
@@ -28,9 +28,9 @@ public class LogUtil {
     }
 
 
-    public static <T extends RiskopsBaseRequest> void warn(Logger logger, RiskopsException e,
+    public static <T extends RiskOpsBaseRequest> void warn(Logger logger, RiskOpsException e,
                                                             String s, T request, String s1, String s2,
-                                                            RiskopsResultCode resultCode, String s3,
+                                                            RiskOpsResultCode resultCode, String s3,
                                                             String message) {
         if (logger.isWarnEnabled()) {
             StringBuilder logBuilder = new StringBuilder();
@@ -47,7 +47,7 @@ public class LogUtil {
     }
 
 
-    public static <R extends RiskopsBaseResult, T extends RiskopsBaseRequest> void info(Logger logger, String s, R result, String s1, T request, String s2) {
+    public static <R extends RiskOpsBaseResult, T extends RiskOpsBaseRequest> void info(Logger logger, String s, R result, String s1, T request, String s2) {
         if (logger.isInfoEnabled()) {
             StringBuilder logBuilder = new StringBuilder();
             logBuilder.append(s)
@@ -62,7 +62,7 @@ public class LogUtil {
         }
     }
 
-    public static <T extends RiskopsBaseRequest> void error(Logger logger, Throwable e, String s, T request, String s1) {
+    public static <T extends RiskOpsBaseRequest> void error(Logger logger, Throwable e, String s, T request, String s1) {
         if (logger.isErrorEnabled()) {
             StringBuilder logBuilder = new StringBuilder();
             logBuilder.append(s)
@@ -73,7 +73,7 @@ public class LogUtil {
         }
     }
 
-    public static <T extends RiskopsBaseRequest> void info(Logger logger, String s, T request, String s1) {
+    public static <T extends RiskOpsBaseRequest> void info(Logger logger, String s, T request, String s1) {
         if (logger.isInfoEnabled()) {
             StringBuilder logBuilder = new StringBuilder();
             logBuilder.append(s)

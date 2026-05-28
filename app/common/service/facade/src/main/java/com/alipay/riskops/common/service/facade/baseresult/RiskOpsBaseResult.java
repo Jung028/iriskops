@@ -1,6 +1,6 @@
 package com.alipay.riskops.common.service.facade.baseresult;
 
-public class RiskopsBaseResult {
+public class RiskOpsBaseResult {
     private String resultMessage;
     private String resultCode;
 

@@ -2,7 +2,7 @@ package com.alipay.riskops.core.model.enums;
 
 import java.util.Date;
 
-public enum RiskopsActionEnum {
+public enum RiskOpsActionEnum {
     QUERY_RISKOPS_INFO("QUERY_RISKOPS_INFO", "Query riskops info"),
     CREATE_RISKOPS_ACCOUNT("CREATE_RISKOPS_ACCOUNT", "Create riskops account"),
     QUERY_RISKOPS_BY_ID("QUERY_RISKOPS_BY_ID", "Query riskops by id"),
@@ -14,11 +14,14 @@ public enum RiskopsActionEnum {
     HANDLE_BANK_CONNECTION_CALLBACK("HANDLE_BANK_CONNECTION_CALLBACK", "Handle bank connection callback"),
     QUERY_CONNECTED_BANK_ACCOUNTS("QUERY_CONNECTED_BANK_ACCOUNTS", "Query connected bank accounts"),
     SYNC_BANK_TRANSACTIONS("SYNC_BANK_TRANSACTIONS", "Sync bank transactions"),
-    DISCONNECT_BANK_ACCOUNT("DISCONNECT_BANK_ACCOUNT", "Disconnect bank account");
+    DISCONNECT_BANK_ACCOUNT("DISCONNECT_BANK_ACCOUNT", "Disconnect bank account"),
+    EVALUATE_TRANSFER_RISK("EVALUATE_TRANSFER_RISK", "Evaluate riskops transfer"),
+
+    ;
 
     private String code;
     private String desc;
-    RiskopsActionEnum(String code, String desc) {
+    RiskOpsActionEnum(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

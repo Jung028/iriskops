@@ -2,17 +2,14 @@ package com.alipay.riskops.common.service.facade.enums;
 
 /**
  * @author adam
- * @date 26/4/2026 11:02 AM
+ * @date 27/5/2026 11:25 PM
  */
-public enum RiskOpsStatus {
-    ACTIVE("ACTIVE", "Active Account"),
-    INACTIVE("INACTIVE", "Inactive Account")
-    ;
-
+public enum RiskRuleCode {
+    TRANSFER_VELOCITY_CHECK("TRANSFER_VELOCITY_CHECK", "Risk rule transfer velocity");
     private String code;
     private String desc;
 
-    RiskOpsStatus(String code, String desc) {
+    RiskRuleCode(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

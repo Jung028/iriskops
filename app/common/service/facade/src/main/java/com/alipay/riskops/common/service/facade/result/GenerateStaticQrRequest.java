@@ -1,8 +1,8 @@
 package com.alipay.riskops.common.service.facade.result;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
 
-public class GenerateStaticQrRequest extends RiskopsBaseRequest {
+public class GenerateStaticQrRequest extends RiskOpsBaseRequest {
     private String currency;
     private String label;
 

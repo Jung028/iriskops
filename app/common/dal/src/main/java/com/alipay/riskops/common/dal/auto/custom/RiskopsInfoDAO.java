@@ -1,15 +1,15 @@
 package com.alipay.riskops.common.dal.auto.custom;
 
-import com.alipay.riskops.common.dal.auto.dataobject.RiskopsInfoDO;
+import com.alipay.riskops.common.dal.auto.dataobject.RiskOpsInfoDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface RiskopsInfoDAO {
+public interface RiskOpsInfoDAO {
 
-    RiskopsInfoDO queryRiskopsInfo(@Param("riskopsId") String riskopsId);
+    RiskOpsInfoDO queryRiskOpsInfo(@Param("riskopsId") String riskopsId);
 
-    int insertRiskopsInfo(RiskopsInfoDO riskopsInfoDO);
+    int insertRiskOpsInfo(RiskOpsInfoDO riskopsInfoDO);
 
-    int updateRiskopsInfo(RiskopsInfoDO riskopsInfoDO);
+    int updateRiskOpsInfo(RiskOpsInfoDO riskopsInfoDO);
 }

@@ -1,12 +1,12 @@
 package com.alipay.riskops.common.service.facade.result;
 
-import com.alipay.riskops.common.service.facade.baseresult.RiskopsBaseRequest;
+import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseRequest;
 import com.alipay.riskops.common.service.facade.item.BusinessProfileItem;
-import com.alipay.riskops.common.service.facade.item.RiskopsSettingsItem;
+import com.alipay.riskops.common.service.facade.item.RiskOpsSettingsItem;
 import com.alipay.riskops.common.service.facade.item.PaymentSettingsItem;
 import com.alipay.riskops.common.service.facade.item.TaxSettingsItem;
 
-public class UpdateRiskopsSettingsRequest extends RiskopsBaseRequest {
+public class UpdateRiskOpsSettingsRequest extends RiskOpsBaseRequest {
     private BusinessProfileItem profile;
     private TaxSettingsItem tax;
     private PaymentSettingsItem payment;
