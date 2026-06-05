@@ -1,7 +1,11 @@
 package com.alipay.riskops.core.model.convertor;
 
-import com.alipay.riskops.common.dal.auto.dataobject.RiskOpsInfoDO;
+import com.alipay.riskops.common.dal.auto.dataobject.RiskDecisionDO;
+import com.alipay.riskops.common.dal.auto.dataobject.RiskScoreDO;
 import com.alipay.riskops.common.service.facade.item.RiskOpsInfoItem;
+import com.alipay.riskops.common.service.facade.result.RiskDecisionResult;
+import com.alipay.riskops.common.service.facade.result.RiskScoreResult;
+import com.alipay.riskops.core.model.domain.RiskDecision;
 import com.alipay.riskops.core.model.domain.RiskOpsInfo;
 
 /**
@@ -38,31 +42,45 @@ public class RiskOpsInfoConvertor {
         return riskopsInfoItem;
     }
 
-    public static RiskOpsInfoDO convertToDO(RiskOpsInfo riskopsInfo) {
-        if (riskopsInfo == null) {
+    public static RiskDecisionDO convertToDO(RiskDecision riskDecision) {
+        if (riskDecision == null) {
             return null;
         }
-        RiskOpsInfoDO riskopsInfoDO = new RiskOpsInfoDO();
-        riskopsInfoDO.setRiskOpsId(riskopsInfo.getRiskOpsId());
-        riskopsInfoDO.setRiskOpsName(riskopsInfo.getRiskOpsName());
-        riskopsInfoDO.setRiskOpsCategory(riskopsInfo.getRiskOpsCategory());
-        riskopsInfoDO.setStatus(riskopsInfo.getStatus());
-        riskopsInfoDO.setCreatedAt(riskopsInfo.getCreatedAt());
-        riskopsInfoDO.setUpdatedAt(riskopsInfo.getUpdatedAt());
-        return riskopsInfoDO;
+        RiskDecisionDO riskDecisionDO = new RiskDecisionDO();
+        riskDecisionDO.setId(riskDecision.getId());
+        riskDecisionDO.setRiskScoreId(riskDecision.getRiskScoreId());
+        riskDecisionDO.setDecidedAt(riskDecision.getDecidedAt());
+        riskDecisionDO.setOutcome(riskDecision.getOutcome());
+        riskDecisionDO.setThresholdApplied(riskDecision.getThresholdApplied());
+        riskDecisionDO.setTransactionId(riskDecision.getTransactionId());
+        return riskDecisionDO;
     }
 
-    public static RiskOpsInfo convertToModel(RiskOpsInfoDO riskopsInfoDO) {
-        if (riskopsInfoDO == null) {
+    public static RiskDecisionDO convertToDO(RiskDecisionResult result) {
+        if (result == null) {
             return null;
         }
-        RiskOpsInfo riskopsInfo = new RiskOpsInfo();
-        riskopsInfo.setRiskOpsId(riskopsInfoDO.getRiskOpsId());
-        riskopsInfo.setRiskOpsName(riskopsInfoDO.getRiskOpsName());
-        riskopsInfo.setCreatedAt(riskopsInfoDO.getCreatedAt());
-        riskopsInfo.setUpdatedAt(riskopsInfoDO.getUpdatedAt());
-        riskopsInfo.setRiskOpsCategory(riskopsInfoDO.getRiskOpsCategory());
-        riskopsInfo.setStatus(riskopsInfoDO.getStatus());
-        return riskopsInfo;
+        RiskDecisionDO riskDecisionDO = new RiskDecisionDO();
+        riskDecisionDO.setId(result.getRiskDecisionId());
+        riskDecisionDO.setRiskScoreId(result.getRiskScoreId());
+        riskDecisionDO.setTransactionId(result.getBusinessId());
+        riskDecisionDO.setOutcome(result.getOutcome());
+        riskDecisionDO.setReason(result.getReason());
+        riskDecisionDO.setThresholdApplied(result.getThresholdApplied());
+        riskDecisionDO.setDecidedAt(result.getDecidedAt());
+        return riskDecisionDO;
     }
+
+    public static RiskScoreDO convertToDO(RiskScoreResult result) {
+        if (result == null) {
+            return null;
+        }
+        RiskScoreDO riskScoreDO = new RiskScoreDO();
+        riskScoreDO.setId(result.getRiskScoreId());
+        riskScoreDO.setTransactionId(result.getBusinessId());
+        riskScoreDO.setScore(result.getFinalScore() != null ? result.getFinalScore().shortValue() : null);
+        riskScoreDO.setCalculatedAt(result.getCalculatedAt());
+        return riskScoreDO;
+    }
+
 }

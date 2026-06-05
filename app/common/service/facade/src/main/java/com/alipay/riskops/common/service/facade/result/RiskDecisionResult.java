@@ -1,6 +1,7 @@
 package com.alipay.riskops.common.service.facade.result;
 
 import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBaseResult;
+import com.alipay.riskops.common.service.facade.enums.RiskDecisionOutcome;
 import com.alipay.riskops.common.service.facade.enums.RiskOutcome;
 import com.alipay.riskops.common.service.facade.enums.RiskSignal;
 
@@ -13,71 +14,108 @@ import java.util.List;
  */
 public class RiskDecisionResult extends RiskOpsBaseResult {
 
+    private static final long serialVersionUID = 1L;
+
     /**
-     * risk decision id
+     * risk_decision table id.
      */
     private String riskDecisionId;
 
     /**
-     * risk score id
+     * risk_score table id.
      */
     private String riskScoreId;
 
     /**
-     * business id
+     * Business record id.
+     * Example: txnId, topUpId, withdrawalId.
      */
     private String businessId;
 
     /**
-     * business type
+     * Business type.
+     * Example: TRANSFER, TOP_UP, WITHDRAWAL, LOGIN, KYC.
      */
     private String businessType;
 
     /**
-     * user id
+     * Actor user id.
      */
     private String userId;
 
     /**
-     * account no
+     * Main account checked by risk.
      */
     private String accountNo;
 
     /**
-     * final score
+     * Final score from RiskScoreEngine.
+     * Range: 0-100.
      */
     private Integer finalScore;
 
     /**
      * APPROVE, STEP_UP, BLOCK, REVIEW.
      */
-    private RiskOutcome outcome;
+    private String outcome;
 
     /**
-     * reason
+     * Human-readable reason.
      */
     private String reason;
 
     /**
      * Example:
-     * 0-49, 50-79, 80-100.
+     * 0-49, 50-79, 80-100, BLOCKING_SIGNAL, FALLBACK.
      */
     private String thresholdApplied;
 
     /**
      * Only used when outcome = STEP_UP.
+     * Frontend can use this to continue verification.
      */
     private String riskSessionId;
 
     /**
-     * Explainable risk breakdown.
+     * Explainable breakdown from strategies.
      */
     private List<RiskSignal> signals;
 
     /**
-     * decided at time
+     * When decision was made.
      */
     private Date decidedAt;
+
+    public boolean isApprove() {
+        return RiskDecisionOutcome.APPROVE.getCode().equals(this.outcome);
+    }
+
+    public boolean isStepUp() {
+        return RiskDecisionOutcome.STEP_UP.getCode().equals(this.outcome);
+    }
+
+    public boolean isBlock() {
+        return RiskDecisionOutcome.BLOCK.getCode().equals(this.outcome);
+    }
+
+    public boolean isReview() {
+        return RiskDecisionOutcome.REVIEW.getCode().equals(this.outcome);
+    }
+
+    public static RiskDecisionResult stepUpFallback(String businessId, String reason) {
+        RiskDecisionResult result = new RiskDecisionResult();
+
+        result.setBusinessId(businessId);
+        result.setBusinessType("TRANSFER");
+        result.setFinalScore(70);
+        result.setOutcome(RiskDecisionOutcome.STEP_UP.getCode());
+        result.setReason(reason);
+        result.setThresholdApplied("FALLBACK");
+        result.setRiskSessionId(java.util.UUID.randomUUID().toString());
+        result.setDecidedAt(new Date());
+
+        return result;
+    }
 
     public String getRiskDecisionId() {
         return riskDecisionId;
@@ -135,11 +173,11 @@ public class RiskDecisionResult extends RiskOpsBaseResult {
         this.finalScore = finalScore;
     }
 
-    public RiskOutcome getOutcome() {
+    public String getOutcome() {
         return outcome;
     }
 
-    public void setOutcome(RiskOutcome outcome) {
+    public void setOutcome(String outcome) {
         this.outcome = outcome;
     }
 

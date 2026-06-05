@@ -6,6 +6,7 @@ import com.alipay.riskops.common.service.facade.enums.RiskSeverity;
 import com.alipay.riskops.common.service.facade.enums.RiskSignal;
 import com.alipay.riskops.common.service.facade.enums.RiskSignalType;
 import com.alipay.riskops.common.service.facade.request.RiskDecisionRequest;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +14,9 @@ import java.util.Map;
 
 /**
  * @author adam
- * @date 25/5/2026 3:42 PM
+ * @date 25/5/2026 3:42 PM
  */
+@Component
 public class TransferVelocityStrategy implements RiskStrategy {
 
     @Override
