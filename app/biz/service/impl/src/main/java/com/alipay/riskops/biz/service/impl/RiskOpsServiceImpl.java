@@ -3,10 +3,13 @@ package com.alipay.riskops.biz.service.impl;
 import com.alipay.riskops.biz.service.impl.checker.RiskOpsRequestChecker;
 import com.alipay.riskops.biz.service.impl.decision.RiskDecisionService;
 import com.alipay.riskops.biz.service.impl.engine.RiskScoreEngine;
+import com.alipay.riskops.biz.service.impl.helper.ResponseBuilder;
+import com.alipay.riskops.biz.service.impl.helper.RiskOpsResultHelper;
 import com.alipay.riskops.biz.service.impl.template.RiskOpsBizCallback;
 import com.alipay.riskops.biz.service.impl.template.RiskOpsServiceTemplate;
 import com.alipay.riskops.common.service.facade.api.RiskOpsService;
 import com.alipay.riskops.common.service.facade.baseresult.RiskOpsBizResult;
+import com.alipay.riskops.common.service.facade.enums.RiskOpsResultCode;
 import com.alipay.riskops.common.service.facade.request.RiskDecisionRequest;
 import com.alipay.riskops.common.service.facade.result.RiskDecisionResult;
 import com.alipay.riskops.common.service.facade.result.RiskScoreResult;
@@ -70,6 +73,13 @@ public class RiskOpsServiceImpl implements RiskOpsService {
                         // update the risk_score table
                         RiskScoreResult riskScoreResult = new RiskScoreResult();
                         riskScoreResult.setRiskScoreId(riskScore.getRiskScoreId());
+                        riskScoreResult.setAccountNo(riskScore.getAccountNo());
+                        riskScoreResult.setFinalScore(riskScore.getFinalScore());
+                        riskScoreResult.setBusinessId(riskScore.getBusinessId());
+                        riskScoreResult.setSignals(riskScore.getSignals());
+                        riskScoreResult.setCalculatedAt(riskScore.getCalculatedAt());
+                        riskScoreResult.setUserId(riskScore.getUserId());
+                        riskScoreResult.setBusinessType(riskScore.getBusinessType());
                         riskScoreRepository.insertRiskScore(riskScoreResult);
 
                         // get average
@@ -85,6 +95,11 @@ public class RiskOpsServiceImpl implements RiskOpsService {
                         riskDecision.setThresholdApplied(riskDecisionResult.getThresholdApplied());
                         riskDecision.setTransactionId(riskDecisionResult.getBusinessId());
                         riskDecisionRepository.insertRiskDecision(riskDecision);
+
+                        // set evaluate transfer risk result
+                        ResponseBuilder.success(response, riskDecisionResult,
+                                RiskOpsActionEnum.EVALUATE_TRANSFER_RISK.getCode(),
+                                RiskOpsActionEnum.EVALUATE_TRANSFER_RISK.getDesc());
                     }
                 });
     }

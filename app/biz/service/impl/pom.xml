@@ -18,6 +18,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <dependency> 
+            <groupId>org.adam</groupId> 
+            <artifactId>riskops-common-dal</artifactId> 
+        </dependency>
 
         <!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
         <dependency>
