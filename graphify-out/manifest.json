@@ -1,0 +1,42 @@
+{
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/custom/RiskDecisionDAO.java": {
+    "mtime": 1780399622.4572656,
+    "ast_hash": "290fd4962e595c116ce3e8851736b57c",
+    "semantic_hash": "290fd4962e595c116ce3e8851736b57c"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/custom/RiskScoreDAO.java": {
+    "mtime": 1780399583.2203767,
+    "ast_hash": "af8bfcce20e0fd527a7068d406ce37f2",
+    "semantic_hash": "af8bfcce20e0fd527a7068d406ce37f2"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/daointerface/RiskDecisionDOMapper.java": {
+    "mtime": 1780398622.8713293,
+    "ast_hash": "d8096a7a6626730e60496021bbb4b084",
+    "semantic_hash": "d8096a7a6626730e60496021bbb4b084"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/daointerface/RiskScoreDOMapper.java": {
+    "mtime": 1780398622.8732626,
+    "ast_hash": "02f5982060263ffb85b72fbce41dba84",
+    "semantic_hash": "02f5982060263ffb85b72fbce41dba84"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/dataobject/RiskDecisionDO.java": {
+    "mtime": 1780398622.8706462,
+    "ast_hash": "4359fce24e580856b12ab5675dc32883",
+    "semantic_hash": "4359fce24e580856b12ab5675dc32883"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/dataobject/RiskDecisionDOExample.java": {
+    "mtime": 1780398622.8701727,
+    "ast_hash": "c88dfdca42e8271fb20d8de9ea02e9ef",
+    "semantic_hash": "c88dfdca42e8271fb20d8de9ea02e9ef"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/dataobject/RiskScoreDO.java": {
+    "mtime": 1780398622.8728776,
+    "ast_hash": "fa3b79567e24fb15a584577f9ff39252",
+    "semantic_hash": "fa3b79567e24fb15a584577f9ff39252"
+  },
+  "/Users/adam/IdeaProjects/iriskops/app/common/dal/src/main/java/com/alipay/riskops/common/dal/auto/dataobject/RiskScoreDOExample.java": {
+    "mtime": 1780398622.8725183,
+    "ast_hash": "d7965a44c58c53897dce64169ae04b0b",
+    "semantic_hash": "d7965a44c58c53897dce64169ae04b0b"
+  }
+}

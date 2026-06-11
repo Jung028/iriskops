@@ -1,6 +1,10 @@
 package com.alipay.riskops.common.service.facade.baseresult;
 
-public class RiskOpsBaseRequest {
+import java.io.Serializable;
+
+public class RiskOpsBaseRequest implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private String operatorId;
     private String operatorName;
 

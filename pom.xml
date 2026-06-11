@@ -27,7 +27,7 @@
         <usercenter.common.service.facade.version>1.0.0.20260520</usercenter.common.service.facade.version>
         <accountcenter.common.service.facade.version>1.0.0.20260520</accountcenter.common.service.facade.version>
         <business.common.service.facade.version>1.0.0.20260520</business.common.service.facade.version>
-        <riskops.common.service.facade.version>1.0.0.20260603-SNAPSHOT</riskops.common.service.facade.version>
+        <riskops.common.service.facade.version>1.0.0.20260611-SNAPSHOT</riskops.common.service.facade.version>
     </properties>
     <parent>
         <groupId>com.alipay.sofa</groupId>

@@ -1,6 +1,8 @@
 package com.alipay.riskops.common.service.facade.baseresult;
 
 public class RiskOpsBizResult<T> extends RiskOpsBaseResult {
+
+    private static final long serialVersionUID = 1L;
     private T result;
     private boolean success;
 

@@ -13,9 +13,7 @@ import com.alipay.riskops.common.service.facade.enums.RiskOpsResultCode;
 import com.alipay.riskops.common.service.facade.request.RiskDecisionRequest;
 import com.alipay.riskops.common.service.facade.result.RiskDecisionResult;
 import com.alipay.riskops.common.service.facade.result.RiskScoreResult;
-import com.alipay.riskops.core.model.domain.RiskDecision;
 import com.alipay.riskops.core.model.enums.RiskOpsActionEnum;
-import com.alipay.riskops.core.service.RiskDecisionRepository;
 import com.alipay.riskops.core.service.RiskScoreRepository;
 import com.alipay.sofa.runtime.api.annotation.SofaService;
 import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
@@ -46,9 +44,6 @@ public class RiskOpsServiceImpl implements RiskOpsService {
     private RiskScoreRepository riskScoreRepository;
 
     @Autowired
-    private RiskDecisionRepository riskDecisionRepository;
-
-    @Autowired
     private RiskDecisionService riskDecisionService;
 
     @Override
@@ -57,7 +52,7 @@ public class RiskOpsServiceImpl implements RiskOpsService {
                 new RiskOpsBizCallback<>() {
                     @Override
                     protected RiskOpsBizResult<RiskDecisionResult> createDefaultResponse() {
-                        return new RiskOpsBizResult<>() {};
+                        return new RiskOpsBizResult<>();
                     }
 
                     @Override
@@ -82,19 +77,8 @@ public class RiskOpsServiceImpl implements RiskOpsService {
                         riskScoreResult.setBusinessType(riskScore.getBusinessType());
                         riskScoreRepository.insertRiskScore(riskScoreResult);
 
-                        // get average
+                        // decide saves the decision internally
                         RiskDecisionResult riskDecisionResult = riskDecisionService.decide(riskScoreResult);
-
-                        // update risk_decision table.
-                        RiskDecision riskDecision = new RiskDecision();
-                        riskDecision.setId(riskDecisionResult.getRiskDecisionId());
-                        riskDecision.setRiskScoreId(riskDecisionResult.getRiskScoreId());
-                        riskDecision.setOutcome(riskDecisionResult.getOutcome());
-                        riskDecision.setDecidedAt(riskDecisionResult.getDecidedAt());
-                        riskDecision.setReason(riskDecisionResult.getReason());
-                        riskDecision.setThresholdApplied(riskDecisionResult.getThresholdApplied());
-                        riskDecision.setTransactionId(riskDecisionResult.getBusinessId());
-                        riskDecisionRepository.insertRiskDecision(riskDecision);
 
                         // set evaluate transfer risk result
                         ResponseBuilder.success(response, riskDecisionResult,

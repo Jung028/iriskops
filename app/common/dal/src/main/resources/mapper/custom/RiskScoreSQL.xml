@@ -8,7 +8,7 @@
       This element was generated on Tue Jun 02 21:10:22 AEST 2026.
     -->
     <id column="id" jdbcType="OTHER" property="id" />
-    <result column="transaction_id" jdbcType="OTHER" property="transactionId" />
+    <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
     <result column="score" jdbcType="SMALLINT" property="score" />
     <result column="signals" jdbcType="OTHER" property="signals" />
     <result column="calculated_at" jdbcType="TIMESTAMP" property="calculatedAt" />
@@ -16,8 +16,8 @@
 
   <insert id="insertRiskScore" parameterType="com.alipay.riskops.common.dal.auto.dataobject.RiskScoreDO">
     insert into risk_score (id, transaction_id, score, signals, calculated_at)
-    values (#{id,jdbcType=OTHER}, #{transactionId,jdbcType=OTHER}, #{score,jdbcType=SMALLINT},
-    #{signals,jdbcType=OTHER}, #{calculatedAt,jdbcType=TIMESTAMP})
+    values (#{id,jdbcType=OTHER}::uuid, #{transactionId,jdbcType=VARCHAR}, #{score,jdbcType=SMALLINT},
+    #{signals,jdbcType=OTHER}::jsonb, #{calculatedAt,jdbcType=TIMESTAMP})
   </insert>
 
 </mapper>

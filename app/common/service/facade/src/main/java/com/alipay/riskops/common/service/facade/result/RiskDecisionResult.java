@@ -86,37 +86,6 @@ public class RiskDecisionResult extends RiskOpsBaseResult {
      */
     private Date decidedAt;
 
-    public boolean isApprove() {
-        return RiskDecisionOutcome.APPROVE.getCode().equals(this.outcome);
-    }
-
-    public boolean isStepUp() {
-        return RiskDecisionOutcome.STEP_UP.getCode().equals(this.outcome);
-    }
-
-    public boolean isBlock() {
-        return RiskDecisionOutcome.BLOCK.getCode().equals(this.outcome);
-    }
-
-    public boolean isReview() {
-        return RiskDecisionOutcome.REVIEW.getCode().equals(this.outcome);
-    }
-
-    public static RiskDecisionResult stepUpFallback(String businessId, String reason) {
-        RiskDecisionResult result = new RiskDecisionResult();
-
-        result.setBusinessId(businessId);
-        result.setBusinessType("TRANSFER");
-        result.setFinalScore(70);
-        result.setOutcome(RiskDecisionOutcome.STEP_UP.getCode());
-        result.setReason(reason);
-        result.setThresholdApplied("FALLBACK");
-        result.setRiskSessionId(java.util.UUID.randomUUID().toString());
-        result.setDecidedAt(new Date());
-
-        return result;
-    }
-
     public String getRiskDecisionId() {
         return riskDecisionId;
     }

@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 @Component
@@ -80,6 +81,7 @@ public class RiskScoreEngine {
         Integer finalScore = calculateFinalScore(signals);
 
         RiskScoreResult result = new RiskScoreResult();
+        result.setRiskScoreId(UUID.randomUUID().toString());
         result.setBusinessId(request.getBusinessId());
         result.setBusinessType(request.getBusinessType());
         result.setUserId(request.getUserId());
@@ -134,6 +136,7 @@ public class RiskScoreEngine {
     private RiskScoreResult buildEmptyScoreResult(RiskDecisionRequest request) {
         RiskScoreResult result = new RiskScoreResult();
 
+        result.setRiskScoreId(UUID.randomUUID().toString());
         result.setBusinessId(request.getBusinessId());
         result.setBusinessType(request.getBusinessType());
         result.setUserId(request.getUserId());
