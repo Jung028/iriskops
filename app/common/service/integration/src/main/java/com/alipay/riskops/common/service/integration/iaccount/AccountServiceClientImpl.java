@@ -14,11 +14,13 @@ import com.alipay.riskops.core.model.util.AssertUtil;
 import com.alipay.sofa.runtime.api.annotation.SofaReference;
 import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * @author adam
  * @date 19/5/2026 6:08 PM
  */
+@Component
 public class AccountServiceClientImpl extends AbstractServiceClient implements AccountServiceClient {
 
     /**

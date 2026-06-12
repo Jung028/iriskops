@@ -4,7 +4,7 @@ import com.alipay.riskops.biz.service.impl.config.RiskRuleConfigProvider;
 import com.alipay.riskops.common.service.integration.iaccount.AccountServiceClient;
 import com.alipay.riskops.core.model.constants.RiskRuleConfigKeys;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +20,7 @@ public abstract class AbstractFeatureProcessor {
     protected AccountServiceClient accountServiceClient;
 
     @Autowired
-    protected RedisTemplate<String, Object> redisTemplate;
+    protected StringRedisTemplate redisTemplate;
 
     @Autowired
     protected RiskRuleConfigProvider ruleConfigProvider;

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -36,7 +36,7 @@ public class RiskRuleConfigProvider {
     private RiskRuleConfigRepository riskRuleConfigRepository;
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private StringRedisTemplate redisTemplate;
 
     /**
      * Returns true when the rule is enabled (or when not found — fail-open).
@@ -64,10 +64,10 @@ public class RiskRuleConfigProvider {
         String redisKey = REDIS_KEY_PREFIX + ruleCode;
 
         // 1. Check Redis
-        Object cachedValue = redisTemplate.opsForValue().get(redisKey);
+        String cachedValue = redisTemplate.opsForValue().get(redisKey);
         if (cachedValue != null) {
             try {
-                return MAPPER.readValue(cachedValue.toString(), CachedConfig.class);
+                return MAPPER.readValue(cachedValue, CachedConfig.class);
             } catch (Exception e) {
                 log.warn("Failed to deserialize cached config for {}, falling back to DB: {}", ruleCode, e.getMessage());
             }
