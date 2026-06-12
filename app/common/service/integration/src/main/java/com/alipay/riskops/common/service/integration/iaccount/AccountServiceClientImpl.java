@@ -8,19 +8,26 @@ import com.alipay.account_center.common.service.facade.request.QueryAccountInfoR
 import com.alipay.account_center.common.service.facade.request.QueryTransactionHistoryRequest;
 import com.alipay.account_center.common.service.facade.request.QueryTransactionHistoryResult;
 import com.alipay.account_center.common.service.facade.request.QueryTransactionRecordRequest;
-import com.alipay.riskops.common.service.facade.api.AccountServiceClient;
 import com.alipay.riskops.common.service.facade.enums.RiskOpsResultCode;
+import com.alipay.riskops.common.service.integration.AbstractServiceClient;
 import com.alipay.riskops.core.model.util.AssertUtil;
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author adam
  * @date 19/5/2026 6:08 PM
  */
-public class AccountServiceClientImpl implements AccountServiceClient {
+public class AccountServiceClientImpl extends AbstractServiceClient implements AccountServiceClient {
 
-    @Autowired
-    private AccountService accountService;
+    /**
+     * account service
+     */
+    @SofaReference(interfaceType = AccountService.class,
+            binding = @SofaReferenceBinding(bindingType = "rest", directUrl = "http://127.0.0.1:8341"),
+            jvmFirst = true)
+    protected AccountService accountService;
 
     @Override
     public AccountBizResult<TransactionRecordItem> queryTransactionRecord(QueryTransactionRecordRequest request) {

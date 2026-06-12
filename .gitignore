@@ -29,3 +29,5 @@ Thumbs.db
 !**/src/main/resources/
 
 logs/
+
+graphify-out/

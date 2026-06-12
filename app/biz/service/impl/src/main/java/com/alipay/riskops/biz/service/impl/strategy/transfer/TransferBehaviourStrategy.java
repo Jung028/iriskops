@@ -17,7 +17,7 @@ import java.util.Map;
  * @date 25/5/2026 3:42 PM
  */
 @Component
-public class TransferBehaviourStrategy implements RiskStrategy {
+public class TransferBehaviourStrategy extends AbstractRiskBehaviourStrategy implements RiskStrategy {
 
     @Override
     public boolean supports(RiskDecisionRequest request) {
@@ -75,7 +75,5 @@ public class TransferBehaviourStrategy implements RiskStrategy {
         return riskSignal;
     }
 
-    private int getInt(String key) {
-        return 0;
-    }
+
 }

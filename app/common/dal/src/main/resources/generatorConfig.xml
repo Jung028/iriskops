@@ -31,5 +31,6 @@
         <!-- Table(s) to generate -->
         <table tableName="risk_decision" domainObjectName="RiskDecisionDO" />
         <table tableName="risk_score" domainObjectName="RiskScoreDO" />
+        <table tableName="risk_rule_config" domainObjectName="RiskRuleConfigDO" />
     </context>
 </generatorConfiguration>

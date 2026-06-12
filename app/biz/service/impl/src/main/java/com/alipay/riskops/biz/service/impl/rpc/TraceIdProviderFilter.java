@@ -1,4 +1,4 @@
-package com.alipay.riskops.rpc;
+package com.alipay.riskops.biz.service.impl.rpc;
 
 import com.alipay.sofa.rpc.context.RpcInvokeContext;
 import com.alipay.sofa.rpc.core.exception.SofaRpcException;

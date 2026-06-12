@@ -1,9 +1,21 @@
 package com.alipay.riskops.common.service.integration.iaccount;
 
+import com.alipay.account_center.common.service.facade.baseresult.AccountBizResult;
+import com.alipay.account_center.common.service.facade.item.AccountInfoItem;
+import com.alipay.account_center.common.service.facade.item.TransactionRecordItem;
+import com.alipay.account_center.common.service.facade.request.QueryAccountInfoRequest;
+import com.alipay.account_center.common.service.facade.request.QueryTransactionHistoryRequest;
+import com.alipay.account_center.common.service.facade.request.QueryTransactionHistoryResult;
+import com.alipay.account_center.common.service.facade.request.QueryTransactionRecordRequest;
+
 /**
- * @author adam
- * @date 19/5/2026 6:07 PM
+ * iaccount — transaction queries and dashboard aggregation.
  */
-public class AccountServiceClient {
+public interface AccountServiceClient {
+    AccountBizResult<QueryTransactionHistoryResult> queryTransactionHistory(QueryTransactionHistoryRequest request);
+    AccountBizResult<TransactionRecordItem> queryTransactionRecord(QueryTransactionRecordRequest request);
+    // query balance.
+    AccountBizResult<AccountInfoItem> queryAccountInfo(QueryAccountInfoRequest request);
+    AccountBizResult<AccountInfoItem> queryAccountInfoByUserId(QueryAccountInfoRequest queryAccountInfoRequest);
 
 }
