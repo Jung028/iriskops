@@ -1,6 +1,7 @@
 package com.alipay.riskops.biz.service.impl.feature;
 
 import com.alipay.account_center.common.service.facade.event.EcTransactionEvent;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
  * @author adam
  * @date 12/6/2026 7:24 PM
  */
+@Component
 public class RiskFeatureDispatcher {
 
     private final List<RiskFeatureProcessor> riskFeatureProcessors;

@@ -62,7 +62,6 @@ public class AccountServiceClientImpl extends AbstractServiceClient implements A
     public AccountBizResult<AccountInfoItem> queryAccountInfo(QueryAccountInfoRequest request) {
         AssertUtil.notNull(request, RiskOpsResultCode.PARAM_ILLEGAL, "request can not be null");
         AssertUtil.notBlank(request.getAccountId(), RiskOpsResultCode.PARAM_ILLEGAL, "request accountId can not be null");
-        AssertUtil.notBlank(request.getUserId(), RiskOpsResultCode.PARAM_ILLEGAL, "request userId can not be null");
 
         AccountBizResult<AccountInfoItem> result = accountService.queryAccountInfo(request);
         AssertUtil.notNull(result, RiskOpsResultCode.PARAM_ILLEGAL, "queryAccountInfo result is null");

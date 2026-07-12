@@ -50,7 +50,17 @@ public abstract class AbstractFeatureProcessor {
             if (index < windowList.size()) {
                 Object ttl = windowList.get(index).get(RiskRuleConfigKeys.TTL_SECONDS);
                 if (ttl instanceof Number) {
-                    return ((Number) ttl).longValue();
+                    long ttlValue = ((Number) ttl).longValue();
+                    if (ttlValue <= 0) {
+                        throw new IllegalStateException(
+                                "Invalid ttlSeconds=" + ttlValue + " in config_json for rule "
+                                + getRuleCode() + " windows[" + index + "]. Must be a positive integer. "
+                                + "Fix: UPDATE risk_rule_config SET config_json = jsonb_set(config_json, "
+                                + "'{windows," + index + ",ttlSeconds}', '<positive>') "
+                                + "WHERE rule_code = '" + getRuleCode() + "';"
+                        );
+                    }
+                    return ttlValue;
                 }
             }
         }
